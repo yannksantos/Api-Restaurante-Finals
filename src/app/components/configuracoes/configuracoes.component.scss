@@ -1,0 +1,32 @@
+:host {
+  display: grid;
+    grid-template-columns: 1fr 170px 90px;
+}
+
+.container {
+  grid-column: 2;
+  height: 190px;
+  padding-top: 0px;
+  text-align: center;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  border: 1px solid #000; /* Adicione uma borda */
+}
+
+.container-centro{
+
+}
+
+.item-config {
+  font-size: 0.78rem;
+  margin: 10px 0px;
+  padding: 5px;
+  
+}
+
+.item-config:hover{
+  border: 1px solid #000; /* Adicione uma borda */
+border-radius: 10px; /* Bordas arredondadas */
+background-color: #c7c7c7;
+}
+

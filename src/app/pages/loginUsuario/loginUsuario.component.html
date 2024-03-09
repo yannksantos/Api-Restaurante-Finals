@@ -1,0 +1,29 @@
+<div class="container-central">
+    <div class="container-login">
+        <div class="header-login">
+            <div class="text-login">
+                <h1>Entrar ou cadastrar-se</h1>
+            </div>
+        </div>
+        <div class="body-login">
+            <form class="input-form" [formGroup]="loginForm" (ngSubmit)="onLoginClick()">
+                <div class="text-login">
+                    Email
+                </div>
+                <label for="email"></label>
+                <input class="btn-input" type="email" name="email" id="email" placeholder="email" formControlName="email" required>
+
+                <div class="text-login">
+                    Senha
+                </div>
+                <label for="senha"></label>
+                <input class="btn-input" type="password" name="senha" id="senha" placeholder="senha" formControlName="senha" required>
+
+                <div class="input-form">
+                    <input class="btn-login login" type="submit" value="Login">
+                </div>
+                <span>Nao tem uma conta ainda ? <b (click)="onCadastrarClick()"> Crie-a agora mesmo </b>  </span>
+            </form>
+        </div>
+    </div>
+</div>

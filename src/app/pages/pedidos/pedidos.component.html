@@ -1,0 +1,53 @@
+<app-toolbar />
+<div class="container">
+    <div class="container-central">
+        <div class="title">
+            <h1>Gerencie os pedidos. </h1>
+        </div>
+        <div class="info-conta">
+            <h2>Pedidos da conta</h2>
+            <form class="save">
+                <div class="caixa-info">
+                    <div class="text-det">
+                        Insira seu cpf para fazer a busca dos pedidos
+                    </div>
+                    <label for="Buscar"></label>
+                    <input class="btn-input" placeholder="Buscar" formControlName="Buscar" required>
+                </div>
+                <div class="input-form">
+                    <input class="btn-salvar" type="submit" value="Buscar">
+                </div>
+            </form>
+        </div>
+        @for (pedido of items$ | async; track pedido.id) {
+        <div class="pedido">
+            <div class="caixa-info">
+                <h2>Número do Pedido: {{pedido.numeroPedido}}</h2>
+                <div class="detalhes-cliente">
+                    <h2>Detalhes do Cliente</h2>
+                    <p>Nome: {{pedido.cliente.nome}} {{pedido.cliente.sobrenome}}</p>
+                    <p>Telefone: {{pedido.cliente.telefone}}</p>
+                    <p>Endereço: {{pedido.cliente.endereco.rua}}, {{pedido.cliente.endereco.numeroCasa}},
+                        {{pedido.cliente.endereco.cep}}</p>
+                </div>
+                <div class="detalhes-entregador">
+                    <h2>Detalhes do Entregador</h2>
+                    <p>Nome: {{pedido.entregador.nome}} {{pedido.entregador.sobrenome}}</p>
+                    <p>Telefone: {{pedido.entregador.telefone}}</p>
+                </div>
+                <div class="itens-pedido">
+                    <h2>Conteudo do seu pedido</h2>
+                    <div *ngFor="let pedido of pedidos">
+                        <div class="caixa-itens">
+                            <div *ngFor="let item of pedido.itensPedido">
+                                <p>Nome do Item: {{item.nome}}</p>
+                                <p> Valor do item : {{item.preco}}</p>
+                              </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

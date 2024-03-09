@@ -1,0 +1,69 @@
+:host {
+  display: block;
+}
+
+.outer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  padding-top: 30px;
+}
+
+.titulo-pagina {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 45px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.grid-item {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(201, 201, 200);
+}
+
+.grid-item img {
+  width: 100%;
+}
+
+.info {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.quantidade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantidade button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remover, .fazer-pedido {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.remover:hover {
+  background-color: #741212;
+}

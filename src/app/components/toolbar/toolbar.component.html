@@ -1,0 +1,33 @@
+<div class="navbar">
+  <div class="nav-one" (click)="onHome()">
+    <h2>Restaurante Santos</h2>
+  </div>
+  <div class="nav-two">
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link" (click)="onQuemSomos()">Quem somos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="onCardapio()">Cardapio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="onDoDia()">Do dia</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
+  <div class="nav-thre">
+    <div class="profile-image-container" (click)="mudarConfig()">
+      <img src="../../../assets/img/avatar.jpg" alt="Perfil" class="profile-image">
+    </div>
+    <div class="user-info">
+      <p class="user-name">{{userName}}</p>
+    </div>
+    <img src="../../../assets/img/carrinhoo.svg" alt="Carrinho" (click)="onCarrinho()">
+  </div>
+  @if(showConfig) {
+  <app-configuracoes class="config"/>
+  }
+</div>

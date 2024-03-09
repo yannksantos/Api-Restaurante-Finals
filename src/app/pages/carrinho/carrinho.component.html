@@ -1,0 +1,24 @@
+<app-toolbar />
+<div class="outer-div">
+  <div class="titulo-pagina">
+    <h1>Carrinho de Compras</h1>
+  </div>
+  <div class="grid-container">
+    @for (item of items$ | async; track item.id) {
+    <div class="grid-item">
+      <img src="../../../assets/img/esffira-de-queijo.jpg" alt="Imagem do Item">
+      <div class="info">
+        <h2>{{ item.nome }}</h2>
+        <p>R$ {{ item.preco }} </p>
+        <div class="quantidade">
+          <button class="diminuir" (click)="onMostrar(item)">-</button>
+          <span>1</span>
+          <button class="aumentar">+</button>
+        </div>
+        <button class="remover" (click)="onRemoveClick(item.idItensPedido)">Remover</button>
+      </div>
+    </div>
+    }
+  </div>
+  <button class="fazer-pedido" (click)="onPagmento()">Comprar <br> <b>Valor Total {{ total }}</b></button>
+</div>

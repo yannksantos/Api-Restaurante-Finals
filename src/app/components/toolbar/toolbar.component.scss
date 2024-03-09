@@ -1,0 +1,86 @@
+:host {
+  display: block;
+  position: absolute;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 220px 1fr 200px;
+  background-color: #f8f9fa;
+  justify-content: space-between;
+  padding: 10px;
+  height: 60px;
+  align-items: center;
+}
+
+.nav-one {
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.nav-two {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.nav-two ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  .nav-item {
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nav-link:hover {
+    color: #007bff;
+  }
+}
+
+.nav-thre {
+  display: flex;
+  align-items: center;
+}
+
+.nav-thre img {
+  margin-right: 10px; 
+}
+
+.profile-image-container {
+  width: 40px;
+  height: 40px; 
+  overflow: hidden;
+  border-radius: 50%;
+  border-right: 1px solid #ccc; 
+  margin-right: 10px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  margin: 0; 
+  font-size: 14px; 
+  margin-right: 20px;
+}
+
+.config {
+  position: fixed;
+  right: 0;
+  top: 60px;
+}

@@ -1,0 +1,93 @@
+<app-toolbar/>
+<div class="container">
+    <div class="container-central">
+        <div class="title">
+            <h1>Configuraçoes da conta </h1>
+            <span>Gerencie os detalhes de sua conta.</span>
+        </div>
+        <div class="info-conta">
+            <h2>Informações da conta</h2>
+            <span>ID:33e81a20d8b945dba05dfff6e8436a9b</span>
+            <div class="caixa-info">
+                <span>Nome do usuario</span>
+                <h4>{{userName}}</h4>
+            </div>
+            <div class="caixa-info">
+                <span>Endereco email</span>
+                <h4>{{emails}}</h4>
+            </div>
+            <form class="save" [formGroup]="buscarForm" (ngSubmit)="onBuscar()">
+                <div class="caixa-info">
+                  <div class="text-det">
+                    Insira seu cpf para fazer a busca do cadastro completo
+                  </div>
+                  <label for="Buscar"></label>
+                  <input class="btn-input" placeholder="Buscar" formControlName="Buscar" required>
+                </div>
+                <div class="input-form">
+                  <input class="btn-salvar" type="submit" value="Buscar">
+                </div>
+                <div class="caixa">
+                    <h1>Cadastro Completo</h1>
+                </div>
+              </form>
+        </div>
+        <form class="det" [formGroup]="clienteForm" (ngSubmit)="onSalvar()">
+            <div class="det-conta">
+                <div class="form-conta">
+                    <h2>Detalhes da conta </h2>
+                    <span>Gerencie seu nome e informações de contato.</span>
+                    <div class="text-det">
+                        Nome
+                    </div>
+                    <label for="Nome"></label>
+                    <input class="btn-input" placeholder="Nome" formControlName="Nome" required>
+
+                    <div class="text-det">
+                        Sobrenome
+                    </div>
+                    <label for="Sobrenome"></label>
+                    <input class="btn-input" placeholder="Sobrenome" formControlName="Sobrenome" required>
+
+                    <div class="text-det">
+                        Telefone
+                    </div>
+                    <label for="Telefone"></label>
+                    <input class="btn-input" placeholder="Telefone" formControlName="Telefone" required>
+
+                    <div class="text-det">
+                        CPF
+                    </div>
+                    <label for="CPF"></label>
+                    <input class="btn-input" placeholder="CPF" formControlName="CPF" required>
+                </div>
+            </div>
+            <div class="det-endereco">
+                <div class="form-conta" formGroupName="Endereco">
+                    <h2>Detalhes do endereço </h2>
+                    <span>Gerencie seus endereços</span>
+                    <div class="text-det">
+                        Rua
+                    </div>
+                    <label for="Rua"></label>
+                    <input class="btn-input" placeholder="Rua" formControlName="Rua" required>
+
+                    <div class="text-det">
+                        Numero da Casa
+                    </div>
+                    <label for="NumeroCasa"></label>
+                    <input class="btn-input" placeholder="NumeroCasa" formControlName="NumeroCasa" required>
+
+                    <div class="text-det">
+                        CEP
+                    </div>
+                    <label for="CEP"></label>
+                    <input class="btn-input" placeholder="CEP" formControlName="CEP" required>
+                </div>
+            </div>
+            <div class="input-form">
+                <input class="btn-salvar " type="submit" value="Salvar">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container-central">
+    <div class="container-login">
+      <div class="header-login">
+        <div class="text-login">
+          <h1>Adicionar Novo Item</h1>
+        </div>
+      </div>
+      <div class="body-login">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="nome" class="text-login">Nome</label>
+            <input type="text" id="nome" [(ngModel)]="itensMenu.Nome" name="Nome" class="btn-input">
+          </div>
+          <div class="form-group">
+            <label for="preco" class="text-login">Preço</label>
+            <input type="number" id="preco" [(ngModel)]="itensMenu.Preco" name="Preco" class="btn-input">
+          </div>
+          <div class="input-form">
+            <button type="submit" class="btn-login">Adicionar Item</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

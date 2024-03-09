@@ -1,0 +1,111 @@
+:host {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 800px;
+    margin: 80px auto; /* Adiciona uma margem de 20px no topo e embaixo do contêiner */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-central {
+  text-align: left;
+}
+
+
+.title, .info-conta {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.det{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Adiciona um espaço entre as colunas */
+}
+
+.det-conta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-conta {
+  width: 100%; /* Ajusta a largura para ocupar todo o espaço disponível */
+}
+
+.title h1, .info-conta h2, .form-conta h2 {
+  color: #333;
+  font-size: 1.5em; /* Aumenta o tamanho da fonte */
+}
+
+.title span, .info-conta span, .form-conta span {
+  color: #777;
+  display: block;
+}
+
+.caixa-info {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.caixa-info span {
+  color: #555;
+}
+
+.caixa-info h4 {
+  color: #333;
+  margin-top: 5px;
+}
+
+.text-det {
+  color: #333;
+  margin-top: 10px;
+}
+
+.btn-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn-salvar {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.input-form{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.caixa-itens {
+  display: block; /* Muda de flex para block */
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.caixa-itens p {
+  color: #333;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+
