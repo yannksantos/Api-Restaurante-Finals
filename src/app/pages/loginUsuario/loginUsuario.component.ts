@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { delay } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-usuario',
@@ -17,6 +18,10 @@ import { delay } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class LoginUsuarioComponent {
+
+
+  constructor(private toaster:ToastrService){
+  }
 
   private router = inject(Router)
   private formBuilder = inject(FormBuilder)

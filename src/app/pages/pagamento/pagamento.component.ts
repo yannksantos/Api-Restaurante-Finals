@@ -121,7 +121,8 @@ export default class PagamentoComponent implements OnInit {
       entregador: entregador,
       total: total,
       status: status,
-      itensPedido: itens
+      itensPedido: itens,
+      userId: ""
     };
     alert("Pedido adicionado")
     return pedido;

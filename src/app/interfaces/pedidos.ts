@@ -13,4 +13,5 @@ import { ItensPedido } from "./itenspedido";
       total: number;
       status?: number; 
       itensPedido: ItensPedido[];
+      userId: string
     }
