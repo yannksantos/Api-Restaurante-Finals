@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { delay } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cadastro',
@@ -17,6 +18,11 @@ import { delay } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class CadastroComponent {
+
+
+  constructor(private toaster:ToastrService){
+
+  }
 
   private router = inject(Router)
   private formBuilder = inject(FormBuilder)
@@ -42,9 +48,12 @@ export default class CadastroComponent {
       const user = this.loginForm.value
       console.log(this.loginForm.value , "do user")
 
-      this.usersService.AdicionarUsuario( user ).pipe(delay(1500)).subscribe(
+      this.usersService.AdicionarUsuario( user ).pipe(delay(1000)).subscribe(
         resp =>  {
           console.log(user , "user logado")
+          this.toaster.success("Sucesso", 'Cadastrado concluido!',{
+            positionClass:'toast-top-center',timeOut:1000
+          })
           this.router.navigate([''])
         }
       )

@@ -6,18 +6,6 @@
         </div>
         <div class="info-conta">
             <h2>Pedidos da conta</h2>
-            <form class="save">
-                <div class="caixa-info">
-                    <div class="text-det">
-                        Insira seu cpf para fazer a busca dos pedidos
-                    </div>
-                    <label for="Buscar"></label>
-                    <input class="btn-input" placeholder="Buscar" formControlName="Buscar" required>
-                </div>
-                <div class="input-form">
-                    <input class="btn-salvar" type="submit" value="Buscar">
-                </div>
-            </form>
         </div>
         @for (pedido of items$ | async; track pedido.id) {
         <div class="pedido">

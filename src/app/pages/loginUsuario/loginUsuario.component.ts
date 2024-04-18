@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { delay } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login-usuario',
@@ -44,7 +45,15 @@ export default class LoginUsuarioComponent {
       this.loginService.login(this.loginForm.value.email , this.loginForm.value.senha ).pipe(delay(1000)).subscribe(
         token =>  {
           console.log(token)
+          this.toaster.success('logado com sucesso', 'Seja bem-vindo',{
+            positionClass:'toast-top-center',timeOut:1000
+          })
           this.router.navigate(['/home'])
+        },
+        error => {
+          this.toaster.error('Tente novamente', 'Senha invalida',{
+            positionClass:'toast-top-center',timeOut:1000
+          })
         }
       )
     }

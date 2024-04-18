@@ -5,6 +5,7 @@ import { UserService } from '../../services/user.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cliente } from '../../interfaces/cliente';
 import { ClienteService } from '../../services/cliente.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-config',
@@ -19,6 +20,11 @@ import { ClienteService } from '../../services/cliente.service';
     ]
 })
 export default class ConfigComponent implements OnInit { 
+
+
+  constructor(private toaster:ToastrService){
+
+  }
 
   private userService = inject(UserService)
   private clienteService = inject(ClienteService)
@@ -67,7 +73,9 @@ export default class ConfigComponent implements OnInit {
   if (this.clienteForm.valid) {
     const cliente : Cliente = this.clienteForm.value;
     this.clienteService.AdicionarCliente(cliente).subscribe(() => console.log('Cliente adicionado'))
-    alert("Cliente adicionado")
+    this.toaster.success("Sucesso", 'Cliente salvo!',{
+      positionClass:'toast-top-center',timeOut:1000
+    })
     console.log(this.clienteForm.value)
     } else {
     console.log('Formulário inválido');
@@ -81,11 +89,15 @@ export default class ConfigComponent implements OnInit {
         (cliente: any) => {
           console.log('Cliente encontrado', cliente);
           this.preencherFormulario(cliente);
-          alert("Cliente encontrado")
+          const nomecliente = cliente.nome
+          this.toaster.success(nomecliente, 'Cliente encontrado!',{
+            positionClass:'toast-top-center',timeOut:1000
+          })
         },
         (erro) => {
-          console.log('Erro ao buscar cliente', erro);
-          alert('Cliente nao encontrado')
+          this.toaster.error('Digite corretamente os dados', 'Cliente nao encontrado!',{
+            positionClass:'toast-top-center',timeOut:1000
+          })
         }
       );
     } else {
@@ -111,7 +123,5 @@ export default class ConfigComponent implements OnInit {
       console.log('Cliente ou Endereco não definido');
     }
   }
-  
-  
 }
   

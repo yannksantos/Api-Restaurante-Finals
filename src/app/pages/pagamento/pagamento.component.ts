@@ -13,6 +13,7 @@ import { EntregadorService } from '../../services/entregador.service';
 import { ItensPedido } from '../../interfaces/itenspedido';
 import { Entregador } from '../../interfaces/entregador';
 import { Pedidos } from '../../interfaces/pedidos';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-pagamento',
@@ -27,6 +28,11 @@ import { Pedidos } from '../../interfaces/pedidos';
     MatIconModule]
 })
 export default class PagamentoComponent implements OnInit {
+
+  constructor(private toaster:ToastrService){
+
+  }
+
 
   protected total!: number; 
   protected subscription?: Subscription;
@@ -65,11 +71,15 @@ export default class PagamentoComponent implements OnInit {
           console.log('Cliente encontrado', cliente);
           this.preencherFormulario(cliente);
           this.cliente = cliente
-          alert("Cliente encontrado");
+          this.toaster.success('Parabens', 'Cliente encontrado!',{
+            positionClass:'toast-top-center',timeOut:1000
+          })
         },
         (erro) => {
           console.log('Erro ao buscar cliente', erro);
-          alert("Cliente não encontrado");
+          this.toaster.error('Digite novamente', 'Cliente nao encontrado!',{
+            positionClass:'toast-top-center',timeOut:1000
+          })
         }
       );
     } else {
@@ -124,7 +134,6 @@ export default class PagamentoComponent implements OnInit {
       itensPedido: itens,
       userId: ""
     };
-    alert("Pedido adicionado")
     return pedido;
   }
   
@@ -138,7 +147,9 @@ export default class PagamentoComponent implements OnInit {
       var pedido = this.criarPedido(itensPedido, this.cliente, entregador);
       console.log(pedido, "pedidosEm precosse")
       this.pedidoService.AdicionarPedidos(pedido).subscribe(() => {
-        alert("Pedido feito com sucesso");
+        this.toaster.success('Parabens', 'Pedido feito com sucesso!',{
+          positionClass:'toast-top-center',timeOut:1000
+        })
       });
     });
   }
